@@ -30,6 +30,8 @@ def run_bot(r,comments_already_replied):
     submission_stream = r.subreddit('Izlam').stream.submissions(pause_after=-1)
     while True:
         for comment in comment_stream:
+            if (comment is None):
+                break
             comment_text = comment.body.lower()
             reply_comment = ""
             subtext = ""
@@ -61,6 +63,8 @@ def run_bot(r,comments_already_replied):
                     comments_already_replied.append(comment.id)
                     add_to_already_replied(comment.id)
         for submission in submission_stream:
+            if(submission is None):
+                break
             submission_text = submission.title.lower() + "------\n" + submission.selftext.lower()
             if submission.id not in recent_replies:
                 if any(taqiya in submission_text for taqiya in taqiyaList):
