@@ -66,7 +66,7 @@ def run_bot(r,comments_already_replied):
             if(submission is None):
                 break
             submission_text = submission.title.lower() + "------\n" + submission.selftext.lower()
-            if submission.id not in recent_replies:
+            if submission.id not in comments_already_replied:
                 if any(taqiya in submission_text for taqiya in taqiyaList):
                     print("Taqiya in Post : " + submission.id)
                     reply_comment = "Sniff, sniff... I smell Taqiya\n\n"
