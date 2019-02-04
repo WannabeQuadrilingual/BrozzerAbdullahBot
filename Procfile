@@ -1,1 +1,1 @@
-worker: python BrozzerAbdullahBot.py
+worker: python BrozzerAbdullah.py
