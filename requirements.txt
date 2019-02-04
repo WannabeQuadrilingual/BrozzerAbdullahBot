@@ -1,0 +1,4 @@
+praw
+psycopg2
+configparser
+linereader
