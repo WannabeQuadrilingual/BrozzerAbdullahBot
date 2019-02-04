@@ -1,12 +1,12 @@
 import os
 
 #BOT
-reddit_username = 'BrozzerAbdullahBot'
-reddit_password = 'BrozzerAbdullahBot'
+reddit_username = os.environ['reddit_username']
+reddit_password = os.environ['reddit_password']
 
 #BOT APP
-client_id = '6l7strRa1jS0yA'
-client_secret = 'EcYyntKcqaJIC-xN-zoc4geohxo'
+client_id = os.environ['client_id']
+client_secret = os.environ['client_secret']
 
 #DB
 host = os.environ['host']
