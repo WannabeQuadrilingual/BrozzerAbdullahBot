@@ -34,7 +34,6 @@ def run_bot(r,comments_already_replied):
                 break
             comment_text = comment.body.lower()
             reply_comment = ""
-            subtext = ""
             if comment.id not in comments_already_replied:
                 # searchObj = re.search( r'\b(l+)(o+)(l+)\b', comment.body, re.I)
                 if("good bot" in comment_text and comment.parent().author == r.user.me()):
@@ -66,14 +65,15 @@ def run_bot(r,comments_already_replied):
             if(submission is None):
                 break
             submission_text = submission.title.lower() + "------\n" + submission.selftext.lower()
+            reply_comment = ""
             if submission.id not in comments_already_replied:
                 if any(taqiya in submission_text for taqiya in taqiyaList):
                     print("Taqiya in Post : " + submission.id)
                     reply_comment = "Sniff, sniff... I smell Taqiya\n\n"
-                if any(takbir in comment_text for takbir in takbirList):
+                if any(takbir in submission_text for takbir in takbirList):
                     print ("Found Takbir in " + submission.id)
                     reply_comment = reply_comment + "#الله اكبر  ALLAHU AKBAR!!!!\n\n"
-                if ("staff gorilla" in comment_text):
+                if ("staff gorilla" in submission_text):
                     print ("Found staff gorilla in " +submission.id)
                     reply_comment = reply_comment + "[You called me?](https://imgur.com/T60vscc)\n\n"
                 if reply_comment!="":
