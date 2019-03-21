@@ -82,7 +82,7 @@ def run_bot(r,comments_already_replied):
                     reply_comment = reply_comment + footer
                     submission.reply(reply_comment)
                     comments_already_replied.append(submission.id)
-                    add_to_already_replied(comment.id)
+                    add_to_already_replied(submission.id)
 
 
 def get_random_dua():
